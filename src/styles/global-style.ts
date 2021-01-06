@@ -28,6 +28,10 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
     cursor: pointer;
   }
+
+  a {
+    text-decoration: none;
+  }
   
 `;
 

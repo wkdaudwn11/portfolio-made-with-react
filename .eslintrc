@@ -33,7 +33,8 @@
     "@typescript-eslint/no-inferrable-types": 0,
     "import/prefer-default-export": 0,
     "@typescript-eslint/no-explicit-any": 1,
-    "camelcase": 0
+    "camelcase": 0,
+    "react/jsx-boolean-value": 0
   },
   "settings": {
     "import/resolver": {
