@@ -1,4 +1,5 @@
 {
+  "homepage": "https://wkdaudwn11.github.io/portfolio-made-with-react/",
   "name": "portfolio-made-with-react",
   "version": "1.0.0",
   "main": "index.js",
@@ -11,9 +12,12 @@
     "lint:fix": "eslint --fix ./src/**/*.{ts,tsx,js,jsx}",
     "prestart": "yarn prettier && yarn lint",
     "start": "webpack-dev-server --mode development --progress",
-    "build": "webpack --progress --mode production"
+    "build": "webpack --progress --mode production",
+    "predeploy": "yarn build",
+    "deploy": "gh-phages -d build"
   },
   "dependencies": {
+    "gh-pages": "^3.1.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^4.1.0",
