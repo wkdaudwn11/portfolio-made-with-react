@@ -1,14 +1,16 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
-import { Wrap, Container } from './App.styles';
+import Router from './components/router';
 
 const App = (): JSX.Element => {
 	return (
-		<ThemeProvider theme={theme}>
-			<Wrap>Hello!</Wrap>
-			<Container bgColor="skyblue">portfolio-made-with-react</Container>
-		</ThemeProvider>
+		<BrowserRouter>
+			<ThemeProvider theme={theme}>
+				<Router />
+			</ThemeProvider>
+		</BrowserRouter>
 	);
 };
 
