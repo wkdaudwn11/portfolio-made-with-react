@@ -2,6 +2,7 @@
 // 스타일-테마 모음 파일
 import { DefaultTheme } from 'styled-components';
 
+const black: string = '#111111';
 const grey_1: string = '#f8f9fa';
 const grey_2: string = '#f1f3f5';
 const grey_3: string = '#e9ecef';
@@ -15,6 +16,7 @@ const grey_10: string = '#212529';
 
 const theme: DefaultTheme = {
 	color: {
+		black,
 		grey_1,
 		grey_2,
 		grey_3,

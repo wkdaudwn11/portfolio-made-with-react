@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 export const Wrap = styled.div`
 	width: 100%;
-	height: 100%;
-	background-color: ${({ theme }) => theme.color.grey_2};
-	color: ${({ theme }) => theme.color.grey_8};
+	height: auto;
+	min-height: calc(100% - 500px);
+	background-color: ${({ theme }) => theme.color.black};
+	color: ${({ theme }) => theme.color.grey_1};
 
 	& > .contents {
 		width: 1280px;
