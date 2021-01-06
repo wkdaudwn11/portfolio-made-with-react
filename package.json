@@ -14,7 +14,7 @@
     "start": "webpack-dev-server --mode development --progress",
     "build": "webpack --progress --mode production",
     "predeploy": "yarn build",
-    "deploy": "gh-phages -d build"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "gh-pages": "^3.1.0",
