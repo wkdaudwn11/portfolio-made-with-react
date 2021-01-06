@@ -6,7 +6,7 @@ import { Title, Desc } from './HeaderSection.styles';
 
 const HeaderSection = (): JSX.Element => {
 	return (
-		<Header bgName="main-bg2.jpg">
+		<Header>
 			<div>
 				<Desc>Front-end developer</Desc>
 				<Title>

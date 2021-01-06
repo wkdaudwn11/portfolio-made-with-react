@@ -1,5 +1,5 @@
 {
-  "homepage": "https://wkdaudwn11.github.io/portfolio-made-with-react/",
+  "homepage": "https://wkdaudwn11.github.io/portfolio-made-with-react",
   "name": "portfolio-made-with-react",
   "version": "1.0.0",
   "main": "index.js",
@@ -14,7 +14,7 @@
     "start": "webpack-dev-server --mode development --progress",
     "build": "webpack --progress --mode production",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "gh-pages": "^3.1.0",
@@ -43,7 +43,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "7.21.5",
     "eslint-plugin-react-hooks": "4.0.0",
-    "file-loader": "6.2.0",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "4.5.1",
     "mini-css-extract-plugin": "1.3.3",
     "prettier": "^2.2.1",

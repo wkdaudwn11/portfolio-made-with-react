@@ -1,19 +1,17 @@
 /* eslint-disable quotes */
 import styled from 'styled-components';
 
-type BgProps = {
-	bgName: string;
-};
-
 export const Bg = styled.div`
 	width: 100%;
 	height: 32rem;
 	position: fixed;
-	background: ${({ bgName }: BgProps) => `url("src/images/${bgName}")`};
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
 	top: 0;
+
+	& > img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 
 	@media only screen and (max-width: 600px) {
 		height: 23rem;

@@ -14,8 +14,9 @@ module.exports = {
 		// 웹팩의 결과물에 대한 정보를 입력하는 속성
 		filename: '[name].bundle.js',
 		chunkFilename: '[name].bundle.js',
-		path: path.resolve(__dirname, 'dist'), // 결과물 경로
-		publicPath: '/', // HTML등 다른 파일에서 생성된 번들을 참조할 때, /을 기준으로 참조.
+		path: path.resolve(__dirname, 'build'), // 결과물 경로
+		// publicPath: process.env.NODE_ENV === 'production' ? '/portfolio-made-with-react/' : '/', // HTML등 다른 파일에서 생성된 번들을 참조할 때, /을 기준으로 참조.
+		publicPath: '/portfolio-made-with-react/',
 	},
 	resolve: {
 		// 웹팩이 모듈을 처리하는 방식을 설정하는 속성으로 확장자를 생략해도 인식하게 만든다.
@@ -49,8 +50,8 @@ module.exports = {
 				test: /\.(png|jpg|gif|svg)$/, // image 관련 확장자로 마치는 모든 파일
 				loader: 'file-loader', // 파일 로더를 적용한다
 				options: {
-					// publicPath: './dist/', // prefix를 아웃풋 경로로 지정 (image 엑박 이슈 때문에 주석. 2020-11-30)
-					name: 'src/images/[name].[ext]?[hash]',
+					publicPath: './src/images/', // local 환경에서 찾아갈 이미지 경로
+					name: '[name].[ext]?[hash]',
 				},
 			},
 			// Image 엑박 이슈 때문에 url-loader 주석 (2020-11-30)
@@ -59,7 +60,7 @@ module.exports = {
 			// 	use: {
 			// 		loader: 'url-loader', // url 로더를 설정한다
 			// 		options: {
-			// 			publicPath: './dist/', // file-loader와 동일
+			// 			publicPath: '/images', // file-loader와 동일
 			// 			name: '[name].[ext]?[hash]', // file-loader와 동일
 			// 			limit: 5000, // 5kb 미만 파일만 data url로 처리
 			// 		},
