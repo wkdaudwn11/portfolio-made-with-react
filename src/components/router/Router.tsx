@@ -35,11 +35,9 @@ const Router = (): JSX.Element => {
 	return (
 		<Suspense fallback={<div>로딩중..</div>}>
 			<Wrap>
-				<div className="contents">
-					<Switch>
-						<Route exact path="/" component={Home} />
-					</Switch>
-				</div>
+				<Switch>
+					<Route exact path="/" component={Home} />
+				</Switch>
 			</Wrap>
 		</Suspense>
 	);

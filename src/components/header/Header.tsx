@@ -1,14 +1,24 @@
 import React from 'react';
-import { Wrap, Gradient } from './Header.styles';
-import mainBg from '../../images/main-bg.jpg';
+// import MainBg from '../../images/main-bg.jpg';
+import { Bg, MainBlock, MainWrap, GradientBox } from './Header.styles';
 
-const Header = (): JSX.Element => {
+type Props = {
+	children: React.ReactNode;
+	bgName: string;
+};
+
+const Header = ({ children, bgName }: Props): JSX.Element => {
 	return (
-		<Wrap>
-			<img src={mainBg} alt="Header 배경화면" />
-			<Gradient />
-		</Wrap>
+		<>
+			{/* <Bg bgName={bgName} /> */}
+			<Bg bgName={bgName} />
+			<MainBlock>
+				<GradientBox>
+					<MainWrap>{children}</MainWrap>
+				</GradientBox>
+			</MainBlock>
+		</>
 	);
 };
 
-export default Header;
+export default React.memo(Header);
