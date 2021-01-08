@@ -15,8 +15,8 @@ module.exports = {
 		filename: '[name].bundle.js',
 		chunkFilename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'build'), // 결과물 경로
-		// publicPath: process.env.NODE_ENV === 'production' ? '/portfolio-made-with-react/' : '/', // HTML등 다른 파일에서 생성된 번들을 참조할 때, /을 기준으로 참조.
-		publicPath: '/portfolio-made-with-react/',
+		publicPath: process.env.NODE_ENV === 'production' ? '/portfolio-made-with-react/' : '/', // HTML등 다른 파일에서 생성된 번들을 참조할 때, /을 기준으로 참조.
+		// publicPath: '/portfolio-made-with-react/',
 	},
 	resolve: {
 		// 웹팩이 모듈을 처리하는 방식을 설정하는 속성으로 확장자를 생략해도 인식하게 만든다.
@@ -80,7 +80,7 @@ module.exports = {
 					? {
 							collapseWhitespace: true, // 빈칸 제거
 							removeComments: true, // 주석 제거
-					  }
+						}
 					: false,
 		}),
 		new CleanWebpackPlugin(), // 빌드 이전 결과물 제거해주는 플러그인.

@@ -5,7 +5,6 @@ import { theme } from './styles/theme';
 import Router from './components/router';
 
 const App = (): JSX.Element => {
-	console.log('process.env.NODE_ENV >', process.env.NODE_ENV);
 	return (
 		<BrowserRouter basename="portfolio-made-with-react">
 			<ThemeProvider theme={theme}>
