@@ -34,7 +34,8 @@
     "import/prefer-default-export": 0,
     "@typescript-eslint/no-explicit-any": 1,
     "camelcase": 0,
-    "react/jsx-boolean-value": 0
+    "react/jsx-boolean-value": 0,
+    "react/no-array-index-key": 0
   },
   "settings": {
     "import/resolver": {

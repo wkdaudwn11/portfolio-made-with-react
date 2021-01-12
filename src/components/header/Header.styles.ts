@@ -29,7 +29,7 @@ export const MainBlock = styled.section`
 
 export const MainWrap = styled.div`
 	width: 100%;
-	max-width: 70rem;
+	max-width: 80rem;
 	margin: 0 auto;
 	height: 100%;
 	padding: 1rem;
