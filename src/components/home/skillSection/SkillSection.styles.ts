@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components';
+
+type SkillFloatTypes = {
+	width: string;
+};
+
+type PolygonTypes = {
+	compareNumber: number;
+	score: number;
+	theme: DefaultTheme;
+};
 
 export const Wrap = styled.div`
 	width: 100%;
@@ -17,34 +27,63 @@ export const Title = styled.div`
 export const SkillBoxWrap = styled.div`
 	width: 100%;
 	height: auto;
-`;
-
-export const SkillInnerWrap = styled.div`
-	width: 25%;
-	height: auto;
-	padding: 8px;
+	overflow: hidden;
 `;
 
 export const SkillBox = styled.div`
-	width: 100%;
+	width: calc(25% - 12px);
 	height: auto;
-	border: ${({ theme }) => `1px solid ${theme.color.grey_8}`};
-	display: flex;
-	justify-content: space-between;
-	-webkit-box-pack: justify;
-	-webkit-box-align: center;
+	float: left;
 	padding: 16px;
+	border: ${({ theme }) => `1px solid ${theme.color.grey_8}`};
+
+	& + & {
+		margin-left: 16px;
+	}
+
+	&:nth-child(1),
+	&:nth-child(4n + 1) {
+		margin-left: 0;
+	}
+
+	&:nth-child(n + 5) {
+		margin-top: 16px;
+	}
+
+	&::after {
+		clear: both;
+		display: block;
+		content: '';
+	}
 `;
 
-export const SkillFlex = styled.div`
-	display: inline-flex;
-	justify-content: space-between;
-	align-items: center;
-	-webkit-box-pack: justify;
-	-webkit-box-align: center;
+export const SkillFloat = styled.div`
+	width: ${({ width }: SkillFloatTypes) => width || '100%'};
+	height: 52px;
+	float: left;
+	&::after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+
+	& > div.image-box,
+	& > div.contents {
+		width: 50%;
+		float: left;
+		&::after {
+			clear: both;
+			display: block;
+			content: '';
+		}
+	}
+
+	& > div.image-box {
+		width: 35%;
+	}
 
 	& > div.contents {
-		margin-left: 12px;
+		width: 65%;
 		& > p.division {
 			color: ${({ theme }) => theme.color.grey_6};
 		}
@@ -56,8 +95,13 @@ export const SkillFlex = styled.div`
 	}
 
 	& > div.score {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
+		width: 100%;
+		height: 100%;
+		display: table;
+		text-align: right;
 	}
+`;
+
+export const Polygon = styled.polygon`
+	fill: ${({ compareNumber, score, theme }: PolygonTypes) => (score > compareNumber ? '#FFC107' : theme.color.grey_6)};
 `;
